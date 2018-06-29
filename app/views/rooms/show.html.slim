@@ -1,0 +1,11 @@
+h2#js-room(data-room-id=@room.id )= @room.name
+
+.js-comment-error
+  = render 'comments/error_field', comment: @comment
+
+= form_for [@room, @comment], data: { remote: true } do |f|
+  = f.text_area :body
+  = f.submit
+
+ul.js-commnent-list
+  = render @comments

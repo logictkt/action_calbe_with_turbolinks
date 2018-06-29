@@ -1,0 +1,5 @@
+<% if @comment.valid? %>
+  $('#comment_body').val('');
+<% else %>
+  $('.js-comment-error').html("<%= j(render 'error_field', comment: @comment) %>");
+<% end %>

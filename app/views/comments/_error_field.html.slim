@@ -1,0 +1,4 @@
+- if comment.errors.present?
+  ul
+    - comment.errors.full_messages.each do |ms|
+      li= ms

@@ -1,0 +1,13 @@
+h2 ルーム一覧
+
+ul
+  - @rooms.each do |room|
+    li= link_to room.name, room_path(room)
+
+- if @room.errors.present?
+  ul
+    - @room.errors.full_messages.each do |ms|
+      li= ms
+= form_for @room do |f|
+  = f.text_field :name
+  = f.submit
