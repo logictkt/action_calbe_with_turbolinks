@@ -9,7 +9,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     - if current_user.present?
-      h1= "Hi! #{current_user.name} さん"
+      h1#js-login= "Hi! #{current_user.name} さん"
       = link_to 'ログアウト', user_path(current_user), method: :delete
+
+      ul#js-message-list
 
     = yield

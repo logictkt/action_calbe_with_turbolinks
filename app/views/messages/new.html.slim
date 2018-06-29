@@ -1,0 +1,8 @@
+h2= "#{@user.name} へメッセージを送る"
+
+= form_tag user_messages_path(@user), method: :post do
+  = text_field_tag :title
+  br
+  = text_area_tag :body
+  br
+  = submit_tag
